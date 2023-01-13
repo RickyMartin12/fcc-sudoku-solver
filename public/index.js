@@ -33,12 +33,11 @@ async function getSolved() {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-type": "application/json"
+      "Content-type": "application/json",
     },
-    body: JSON.stringify(stuff)
+    body: JSON.stringify(stuff),
   });
   const parsed = await data.json();
-  console.log(parsed);
   if (parsed.error) {
     errorMsg.innerHTML = `<code>${JSON.stringify(parsed)}</code>`;
     return;
@@ -50,15 +49,15 @@ async function getChecked() {
   const stuff = {
     puzzle: textArea.value,
     coordinate: coordInput.value,
-    value: valInput.value
+    value: valInput.value,
   };
   const data = await fetch("/api/check", {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-type": "application/json"
+      "Content-type": "application/json",
     },
-    body: JSON.stringify(stuff)
+    body: JSON.stringify(stuff),
   });
   const parsed = await data.json();
   errorMsg.innerHTML = `<code>${JSON.stringify(parsed, null, 2)}</code>`;

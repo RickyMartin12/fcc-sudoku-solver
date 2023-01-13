@@ -36,14 +36,10 @@ module.exports = function (app) {
       return res.json({
         valid: false,
         conflict: conflicts,
-        teste1: valueRe.test(value),
-        teste2: coordRe.test(coord)
       });
     // return true if true
     res.json({
       valid: true,
-      teste1: valueRe.test(value),
-      teste2: coordRe.test(coord)
     });
   });
 
